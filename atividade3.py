@@ -3,9 +3,9 @@ projetos = []
 
 def cadastrar_projeto():
     nome = input("Nome do projeto: ")
-    responsavel = input("Nome do responsável: ")
+    responsavel = input("Nome do responsavel: ")
     horas = int(input("Horas estimadas: "))
-    status = input("Status (ativo/finalizado): ").lower()
+    status = input("Status ativo/finalizado: ").lower()
 
     projeto = {
         "nome": nome,
@@ -15,25 +15,25 @@ def cadastrar_projeto():
     }
 
     projetos.append(projeto)
-    print("Projeto cadastrado com sucesso!\n")
+    print("Projeto cadastrado com sucesso")
 
 def listar_projetos():
     if not projetos:
-        print("Nenhum projeto cadastrado.\n")
+        print("Nenhum projeto cadastrado")
         return
     for i, p in enumerate(projetos, 1):
         print(f"{i}. {p['nome']} | Responsável: {p['responsavel']} | Horas: {p['horas']} | Status: {p['status']}")
     print()
 
 def buscar_por_responsavel():
-    nome = input("Digite o nome do responsável: ")
+    nome = input("Digite o nome do responsavel: ")
     encontrados = [p for p in projetos if p["responsavel"].lower() == nome.lower()]
     
     if encontrados:
         for p in encontrados:
             print(f"{p['nome']} | Horas: {p['horas']} | Status: {p['status']}")
     else:
-        print("Nenhum projeto encontrado para esse responsável.")
+        print("Nenhum projeto encontrado para esse responsavel")
     print()
 
 def mostrar_por_status(status_desejado):
@@ -48,7 +48,7 @@ def mostrar_por_status(status_desejado):
 
 
 while True:
-    print("MENU    ")
+    print("MENU")
     print("1 - Cadastrar novo projeto")
     print("2 - Listar todos os projetos")
     print("3 - Buscar por responsável")
@@ -69,7 +69,8 @@ while True:
     elif opcao == "5":
         mostrar_por_status("finalizado")
     elif opcao == "6":
-        print("Encerrando o sistema. Até mais!")
+        print("Encerrando o sistema")
         break
     else:
-        print("Opção inválida! Tente novamente.\n")
+        print("Opção inválida")
+
