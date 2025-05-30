@@ -2,29 +2,29 @@
 catalogo = {}
 
 
-qtd = int(input("Quantos filmes deseja adicionar ao catálogo? "))
+qtd = int(input("Quantos filmes voce quer adicionar ao catálogo? "))
 
 for i in range(qtd):
     titulo = input(f"Digite o título do {i+1}º filme: ")
-    ano = int(input(f"Digite o ano de lançamento de '{titulo}': "))
-    catalogo[titulo] = ano  # 3. Guardando no dicionário
+    ano = int(input(f"Digite o ano de lançamento de {titulo}: "))
+    catalogo[titulo] = ano  
 
 
-print("\n--- Catálogo de Filmes ---")
+print("Catálogo de Filmes")
 for titulo, ano in catalogo.items():
     print(f"{titulo} - Lançado em {ano}")
 
 
-busca = input("\nDigite o título de um filme para buscar: ")
+busca = input("Digite o título de um filme para buscar: ")
 
 if busca in catalogo:
-    print(f"O filme '{busca}' foi lançado em {catalogo[busca]}.")
+    print(f"O filme {busca} foi lançado em {catalogo[busca]}.")
 else:
-    print("Filme não encontrado no catálogo.")
+    print("Filme não encontrado no catálogo")
 
 
-filtro_ano = int(input("\nDeseja ver filmes lançados a partir de qual ano? "))
-print(f"\nFilmes lançados a partir de {filtro_ano}:")
+filtro_ano = int(input("Qual filmes voce que ver lacados a partir de qual ano? "))
+print(f"Filmes lançados a partir de {filtro_ano}:")
 encontrados = False
 
 for titulo, ano in catalogo.items():
@@ -33,4 +33,4 @@ for titulo, ano in catalogo.items():
         encontrados = True
 
 if not encontrados:
-    print("Nenhum filme encontrado nesse período.")
+    print("Nenhum filme encontrado nesse ano")
